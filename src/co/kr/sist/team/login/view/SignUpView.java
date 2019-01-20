@@ -26,7 +26,7 @@ public class SignUpView extends JDialog {
 		super(lv, "회원가입", true); // true-모달 : 상위 프레임을 사용할 수 없음.
 
 		JLabel jlTitle = new JLabel("회원가입");
-		jlTitle.setFont(new Font("SanSerif", Font.BOLD, 17));
+		jlTitle.setFont(new Font("SanSerif", Font.BOLD, 18));
 
 		JLabel[] jlabels = new JLabel[11];
 		String[] jblNames = { "아이디", "비밀번호", "비밀번호 확인", "핸드폰", "이메일", "이름", "주민등록번호", "주소", "상세주소", "인증질문", "질문 답" };
@@ -78,19 +78,19 @@ public class SignUpView extends JDialog {
 		jtfQA = new JTextField(20);
 
 		/* 컴포넌트 크기설정 */
-		jlTitle.setBounds(170, 50, 100, 20);
+		jlTitle.setBounds(160, 50, 100, 20);
 
-		jlabels[0].setBounds(80, 100, 50, 30); // 아이디
-		jlabels[1].setBounds(70, 135, 50, 30); // 비밀번호
-		jlabels[2].setBounds(43, 170, 70, 30); // 비밀번호 확인
-		jlabels[3].setBounds(80, 205, 50, 30); // 핸드폰
-		jlabels[4].setBounds(80, 240, 50, 30); // 이메일
-		jlabels[5].setBounds(91, 275, 50, 30); // 이름
-		jlabels[6].setBounds(47, 310, 70, 30); // 주민번호
-		jlabels[7].setBounds(91, 380, 50, 30); // 주소
-		jlabels[8].setBounds(70, 415, 50, 30); // 상세주소
-		jlabels[9].setBounds(70, 450, 50, 30); // 인증질문
-		jlabels[10].setBounds(77, 485, 50, 30); // 질문 답
+		jlabels[0].setBounds(75, 100, 50, 30); // 아이디
+		jlabels[1].setBounds(60, 135, 60, 30); // 비밀번호
+		jlabels[2].setBounds(30, 170, 85, 30); // 비밀번호 확인
+		jlabels[3].setBounds(75, 205, 50, 30); // 핸드폰
+		jlabels[4].setBounds(75, 240, 50, 30); // 이메일
+		jlabels[5].setBounds(80, 275, 50, 30); // 이름
+		jlabels[6].setBounds(30, 310, 85, 30); // 주민번호
+		jlabels[7].setBounds(80, 345, 50, 30); // 주소
+		jlabels[8].setBounds(60, 415, 60, 30); // 상세주소
+		jlabels[9].setBounds(60, 450, 60, 30); // 인증질문
+		jlabels[10].setBounds(70, 485, 50, 30); // 질문 답
 
 		// 아이디
 		jtfId.setBounds(120, 100, 220, 30);
@@ -113,7 +113,7 @@ public class SignUpView extends JDialog {
 		emailComma = new JLabel("@");
 		emailComma.setBounds(190, 240, 15, 30);
 		jtfEmail2.setBounds(202, 240, 70, 30);
-		jcbEmail.setBounds(272, 242, 100, 30);
+		jcbEmail.setBounds(272, 242, 70, 30);
 
 		// 이름
 		jtfName.setBounds(120, 275, 220, 30);
@@ -125,7 +125,7 @@ public class SignUpView extends JDialog {
 		jtfSsn2.setBounds(240, 310, 100, 30);
 
 		// 주소
-		jtfAddress1.setBounds(120, 345, 110, 30);
+		jtfAddress1.setBounds(120, 345, 100, 30);
 		jbSearchAddr.setBounds(230, 345, 115, 30);
 		jtfAddress2.setBounds(120, 380, 220, 30);
 		jtfAddress3.setBounds(120, 415, 220, 30); // 상세주소 입력
@@ -138,8 +138,8 @@ public class SignUpView extends JDialog {
 		jtfQA.setBounds(120, 485, 220, 30);
 
 		// 버튼
-		jbSignUp.setBounds(65, 550, 135, 40);
-		jbCancle.setBounds(210, 550, 135, 40);
+		jbSignUp.setBounds(65, 540, 135, 40);
+		jbCancle.setBounds(210, 540, 135, 40);
 
 		/* 배치 */
 		setLayout(null);
@@ -186,9 +186,10 @@ public class SignUpView extends JDialog {
 		/* 이벤트 등록 */
 		SignUpController suc = new SignUpController(this);
 		addWindowListener(suc);
+		jcbEmail.addActionListener(suc);
 
 		setResizable(false); // 크기 변경 불가
-		setBounds(100, 100, 400, 630); // 프레임 크기 설정
+		setBounds(100, 100, 400, 650); // 프레임 크기 설정
 		setVisible(true); // 가시호
 	}// 매개생성자
 
